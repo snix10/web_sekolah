@@ -12,6 +12,7 @@ class StafGuruSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+
+
     }
 }

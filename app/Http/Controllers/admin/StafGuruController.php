@@ -12,7 +12,12 @@ class StafGuruController extends Controller
      */
     public function index()
     {
-        return view('admin.stafguru');
+        return view('admin.stafguru', [
+
+            'stafgurus' => StafGuru::all(),
+            
+            
+        ]);
     }
 
     /**

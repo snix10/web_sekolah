@@ -23,7 +23,7 @@
 
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 
-    
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -946,8 +946,10 @@
     <script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
     <script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    
-   
+
+    <!-- bs-custom-file-input -->
+    <script src="../../plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+
     <!-- Page specific script -->
     <script>
         $(function() {
@@ -966,6 +968,11 @@
                 "autoWidth": false,
                 "responsive": true,
             });
+        });
+    </script>
+    <script>
+        $(function() {
+            bsCustomFileInput.init();
         });
     </script>
 </body>

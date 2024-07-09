@@ -17,7 +17,10 @@ class StafGuruFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nama' => $this->faker->name,
+            'jabatan' => $this->faker->randomElement(['Kepala Sekolah', 'Guru', 'Staf IT']),
+            'mapel' => $this->faker->randomElement(['IPA', 'IPS', 'IT','B.INDONESIA','B.INGGRIS']),
+            
         ];
     }
 }

@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('staf_gurus', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('sebagai');
-            // $table->string('gambar_buku');
+            $table->string('nama');
+            $table->string('jabatan');
+            $table->string('mapel')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }
