@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\admin;
+
 use App\Http\Controllers\Controller;
 use App\Models\StafGuru;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class StafGuruController extends Controller
 {
@@ -12,12 +14,8 @@ class StafGuruController extends Controller
      */
     public function index()
     {
-        return view('admin.stafguru', [
-
-            'stafgurus' => StafGuru::all(),
-            
-            
-        ]);
+        $stafgurus = StafGuru::all();
+        return view('admin.stafguru', compact('stafgurus'));
     }
 
     /**
@@ -33,7 +31,35 @@ class StafGuruController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        
+        $validator = Validator::make($request->all(), [
+            'nama'         => 'required|max:250',
+            'jabatan'      => 'required',
+            'photo'        => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        
+
+        // Proses penyimpanan file gambar
+        $file = $request->file('photo');
+        $fileName = time() . '_' . $file->getClientOriginalName();
+        $file->storeAs('public/asset_web_sekolah/photos', $fileName);
+
+        // Simpan data staf guru ke database
+        StafGuru::create([
+            'nama'      => $request->nama,
+            'jabatan'   => $request->jabatan,
+            'mapel'     => $request->mapel,
+            'photo'     => $fileName, // Simpan nama file foto yang diunggah
+        ]);
+
+        return redirect('/stafguru');
     }
 
     /**
