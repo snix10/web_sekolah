@@ -20,21 +20,24 @@ Route::post('/keluar',[AuthController::class,'keluar']);
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('stafguru', StafGuruController::class);
-    Route::resource('prestasi', PinjamBukuController::class);
-    Route::resource('PPDB', PinjamBukuController::class);
-    Route::resource('agendaterdekat', PinjamBukuController::class);
-    Route::resource('blog', PinjamBukuController::class);
-    Route::resource('ekstrakurikuler', PinjamBukuController::class);
-    Route::resource('galeri', PinjamBukuController::class);
+
+    
+    
+    // Route::resource('prestasi', PinjamBukuController::class);
+    // Route::resource('PPDB', PinjamBukuController::class);
+    // Route::resource('agendaterdekat', PinjamBukuController::class);
+    // Route::resource('blog', PinjamBukuController::class);
+    // Route::resource('ekstrakurikuler', PinjamBukuController::class);
+    // Route::resource('galeri', PinjamBukuController::class);
 });
 
 
-Route::middleware(['guest'])->group(function () {
-    Route::resource('staf-guru', ProfileController::class);
-    Route::resource('prestasi', PinjamBukuController::class);
-    Route::resource('PPDB', PinjamBukuController::class);
-    Route::resource('agendaterdekat', PinjamBukuController::class);
-    Route::resource('blog', PinjamBukuController::class);
-    Route::resource('ekstrakurikuler', PinjamBukuController::class);
-    Route::resource('galeri', PinjamBukuController::class);
-});
+// Route::middleware(['guest'])->group(function () {
+//     Route::resource('staf-guru', ProfileController::class);
+//     Route::resource('prestasi', PinjamBukuController::class);
+//     Route::resource('PPDB', PinjamBukuController::class);
+//     Route::resource('agendaterdekat', PinjamBukuController::class);
+//     Route::resource('blog', PinjamBukuController::class);
+//     Route::resource('ekstrakurikuler', PinjamBukuController::class);
+//     Route::resource('galeri', PinjamBukuController::class);
+// });

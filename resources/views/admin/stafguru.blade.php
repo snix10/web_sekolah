@@ -17,8 +17,8 @@
                         <th>Nama</th>
                         <th>Jabatan</th>
                         <th>Mapel</th>
-                        <th>Photo</th>
-                        <th>DSB</th>
+                        {{-- <th>Photo</th>
+                        <th>DSB</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -29,19 +29,20 @@
                             <td>{{ $stafguru->jabatan }}
                             </td>
                             <td>{{ $stafguru->mapel }}</td>
-                            <td> {{ $stafguru->photo }}-</td>
-                            <td><img src="{{ asset('storage/photos/' . $stafguru->photo) }}" alt="">
-                            </td>
+                            {{-- <td> {{ $stafguru->photo }}-</td> --}}
+                            
                             <div class="modal fade" id="modal-ubah{{ $stafguru->id }}">
                                 <div class="modal-dialog modal-lg">
-                                    <form enctype="multipart/form-data" class="navbar-form" method="post" action="">
+                                    <form enctype="multipart/form-data" class="navbar-form" method="post"
+                                        action="{{ route('stafguru.update', $stafguru) }}">
                                         @csrf
+                                        @method('PUT')
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h4 class="modal-title">Ubah</h4>
-                                                
 
-                                                
+
+
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -85,23 +86,36 @@
 
                                             </div>
                                             <div class="modal-footer justify-content-between">
-                                                <button type="button" class="btn btn-default"
-                                                    data-dismiss="modal">Close</button>
+
+
+                                                {{-- <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">Close</button> --}}
                                                 <button type="submit" class="btn btn-primary">Save changes</button>
-                                            </div>
-                                        </div>
+                                            
                                     </form>
-                                    <!-- /.modal-content -->
+
+                                    <form action="{{ route('stafguru.destroy', $stafguru) }}" method="POST"
+                                        class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
                                 </div>
-                                <!-- /.modal-dialog -->
+
+                                </div>
                             </div>
-                            <!-- /.modal -->
-                        </tr>
-                    @endforeach
+
+                            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    </tr>
+    @endforeach
 
 
-                </tbody>
-                {{-- <tfoot>
+    </tbody>
+    {{-- <tfoot>
         <tr>
           <th>Rendering engine</th>
           <th>Browser</th>
@@ -110,9 +124,9 @@
           <th>CSS grade</th>
         </tr>
         </tfoot> --}}
-            </table>
-        </div>
-        <!-- /.card-body -->
+    </table>
+    </div>
+    <!-- /.card-body -->
     </div>
 
 
@@ -143,7 +157,7 @@
                             </div>
                         </div>
 
-                        
+
 
                         <div class="form-group">
                             <label for="nama">Nama</label>
