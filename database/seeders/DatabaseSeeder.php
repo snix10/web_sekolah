@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\StafGuru::factory(50)->create();
+        \App\Models\Prestasi::factory(50)->create();
 
         // stafguru::factory(1)->create([
         //     'nama' => 'gatot',

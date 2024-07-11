@@ -53,7 +53,7 @@
                             {{-- <i class="right fas fa-angle-left" ></i> --}}
                         </p>
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="{{ url('prestasi') }}" class="nav-link {{ Request::is('prestasi') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-trophy"></i>
                         <p>
                             Prestasi
