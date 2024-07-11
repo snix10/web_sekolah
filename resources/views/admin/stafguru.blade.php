@@ -17,8 +17,6 @@
                         <th>Nama</th>
                         <th>Jabatan</th>
                         <th>Mapel</th>
-                        {{-- <th>Photo</th>
-                        <th>DSB</th> --}}
                     </tr>
                 </thead>
                 <tbody>
@@ -29,28 +27,27 @@
                             <td>{{ $stafguru->jabatan }}
                             </td>
                             <td>{{ $stafguru->mapel }}</td>
-                            {{-- <td> {{ $stafguru->photo }}-</td> --}}
-                            
+
+
                             <div class="modal fade" id="modal-ubah{{ $stafguru->id }}">
                                 <div class="modal-dialog modal-lg">
-                                    <form enctype="multipart/form-data" class="navbar-form" method="post"
-                                        action="{{ route('stafguru.update', $stafguru) }}">
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h4 class="modal-title">Ubah</h4>
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Ubah</h4>
 
 
 
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                    aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
 
-                                            <div class="modal-body">
-
+                                        <div class="modal-body">
+                                            <form enctype="multipart/form-data" class="navbar-form" method="post"
+                                                action="{{ route('stafguru.update', $stafguru) }}">
+                                                @csrf
+                                                @method('PUT')
 
                                                 <img src="{{ asset('storage/photos/' . $stafguru->photo) }}" alt="">
                                                 <div class="form-group">
@@ -62,9 +59,7 @@
                                                             <label class="custom-file-label"
                                                                 for="exampleInputFile">{{ $stafguru->photo }}</label>
                                                         </div>
-                                                        {{-- <div class="input-group-append">
-                                                  <span class="input-group-text">Upload</span>
-                                              </div> --}}
+
                                                     </div>
                                                 </div>
 
@@ -84,47 +79,40 @@
                                                         value="{{ $stafguru->mapel }}" placeholder="mapel">
                                                 </div>
 
-                                            </div>
-                                            <div class="modal-footer justify-content-between">
+                                        </div>
+                                        <div class="modal-footer justify-content-between">
 
 
-                                                {{-- <button type="button" class="btn btn-default"
+                                            {{-- <button type="button" class="btn btn-default"
                                                     data-dismiss="modal">Close</button> --}}
-                                                <button type="submit" class="btn btn-primary">Save changes</button>
-                                            
-                                    </form>
+                                            <button type="submit" class="btn btn-primary">Save changes</button>
 
-                                    <form action="{{ route('stafguru.destroy', $stafguru) }}" method="POST"
-                                        class="d-inline">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                            </form>
+
+                                            <form action="{{ route('stafguru.destroy', $stafguru) }}" method="POST"
+                                                class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger"> <i
+                                                        class="nav-icon fas fa-trash"></i></button>
+                                            </form>
+                                        </div>
+
+                                    </div>
                                 </div>
 
-                                </div>
+                                <!-- /.modal-content -->
                             </div>
-
-                            <!-- /.modal-content -->
+                            <!-- /.modal-dialog -->
         </div>
-        <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
-    </tr>
-    @endforeach
-
-
-    </tbody>
-    {{-- <tfoot>
-        <tr>
-          <th>Rendering engine</th>
-          <th>Browser</th>
-          <th>Platform(s)</th>
-          <th>Engine version</th>
-          <th>CSS grade</th>
+        <!-- /.modal -->
         </tr>
-        </tfoot> --}}
-    </table>
+        @endforeach
+
+
+        </tbody>
+
+        </table>
     </div>
     <!-- /.card-body -->
     </div>
@@ -150,8 +138,8 @@
                             <label for="photo">Photo</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" name="photo" class="custom-file-input" id="exampleInputFile">
-                                    <label class="custom-file-label" for="exampleInputFile">photo</label>
+                                    <input type="file" name="photo" class="custom-file-input" id="exampleInputFile" required>
+                                    <label class="custom-file-label" for="exampleInputFile" >photo</label>
                                 </div>
 
                             </div>
@@ -162,17 +150,17 @@
                         <div class="form-group">
                             <label for="nama">Nama</label>
                             <input type="text" name="nama" class="form-control" id="nama"
-                                placeholder="masukan nama">
+                                placeholder="masukan nama" required>
                         </div>
                         <div class="form-group">
                             <label for="sebagai">Jabatan</label>
                             <input type="text" name="jabatan" class="form-control" id="sebagai"
-                                placeholder="jabatan">
+                                placeholder="jabatan" required>
                         </div>
                         <div class="form-group">
                             <label for="mapel">Mapel</label>
                             <input type="text" name="mapel" class="form-control" id="mapel"
-                                placeholder="mapel">
+                                placeholder="mapel" required>
                         </div>
 
                     </div>
