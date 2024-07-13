@@ -11,8 +11,8 @@
             <div class="info-box-content">
                 <span class="info-box-text">Staf - Guru</span>
                 <span class="info-box-number">
-                    10
-                    <small>%</small>
+                    {{ $stafgurus->total() }}
+                    <small></small>
                 </span>
             </div>
             <!-- /.info-box-content -->
@@ -27,7 +27,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Prestasi</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-number">{{ $prestasis->total() }}</span>
             </div>
             <!-- /.info-box-content -->
         </div>

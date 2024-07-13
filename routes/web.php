@@ -1,12 +1,10 @@
 <?php
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\auth\AuthController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\StafGuruController;
 use App\Http\Controllers\admin\PrestasiController;
 
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
 
 Route::get('/', function () {
     return view('index');
@@ -20,8 +18,10 @@ Route::post('/keluar',[AuthController::class,'keluar']);
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::resource('dashboard', DashboardController::class);
     Route::resource('stafguru', StafGuruController::class);
     Route::resource('prestasi', PrestasiController::class);
+
     
     
     
