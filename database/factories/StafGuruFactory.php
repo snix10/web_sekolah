@@ -21,6 +21,7 @@ class StafGuruFactory extends Factory
             'jabatan' => $this->faker->randomElement(['Kepala Sekolah', 'Guru', 'Staf IT']),
             'mapel' => $this->faker->randomElement(['IPA', 'IPS', 'IT','B.INDONESIA','B.INGGRIS']),
             
+            
         ];
     }
 }

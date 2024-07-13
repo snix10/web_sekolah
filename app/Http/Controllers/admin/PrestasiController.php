@@ -55,6 +55,7 @@ class PrestasiController extends Controller
             'kejuaraan'          => $request->kejuaraan,
             'keterangan'         => $request->keterangan,
             'sumber'             => $request->sumber,
+            'deskripsi'          => $request->deskripsi,
             'gambarprestasi'     => $fileName, // Simpan nama file foto yang diunggah
         ]);
 
@@ -111,7 +112,8 @@ class PrestasiController extends Controller
         $Prestasi->update([
             'kejuaraan'        => $request->kejuaraan,
             'keterangan'       => $request->keterangan,
-            'prestasi'         => $request->prestasi,
+            'sumber'           => $request->sumber,
+            'deskripsi'        => $request->deskripsi,
             'gambarprestasi'   => $fileName, // Simpan nama file foto yang diunggah
         ]);
 

@@ -20,6 +20,7 @@ class PrestasiFactory extends Factory
             'kejuaraan' => $this->faker->randomElement(['olimpiade', 'Event', 'Pemenrintah','Masyarakat']),
             'keterangan' => $this->faker->randomElement(['Juara 1', 'Juara 2', 'Penghargaan']),
             'sumber' => $this->faker->randomElement(['Dalam Sekolah', 'LuarSekolah', 'IT']),
+            'deskripsi' => $this->faker->randomElement(['lorem ipmsum ini adalah deskripsi']),
         ];
     }
 }

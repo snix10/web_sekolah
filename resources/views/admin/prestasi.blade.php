@@ -28,7 +28,7 @@
                             </td>
                             <td>{{ $prestasi->sumber }}</td>
 
-
+                            {{-- Modal Ubah --}}
                             <div class="modal fade" id="modal-ubah-prestasi{{ $prestasi->id }}">
                                 <div class="modal-dialog modal-lg">
 
@@ -49,13 +49,14 @@
                                                 @csrf
                                                 @method('PUT')
 
-                                                <img src="{{ asset('storage/gambarprestasi/' . $prestasi->gambarprestasi) }}" alt="">
+                                                <img src="{{ asset('storage/gambarprestasi/' . $prestasi->gambarprestasi) }}"
+                                                    alt="">
                                                 <div class="form-group">
                                                     <label for="form1">Image</label>
                                                     <div class="input-group">
                                                         <div class="custom-file">
-                                                            <input type="file" name="gambarprestasi" class="custom-file-input"
-                                                                id="form1">
+                                                            <input type="file" name="gambarprestasi"
+                                                                class="custom-file-input" id="form1">
                                                             <label class="custom-file-label"
                                                                 for="exampleInputFile">{{ $prestasi->gambarprestasi }}</label>
                                                         </div>
@@ -65,18 +66,27 @@
 
                                                 <div class="form-group">
                                                     <label for="form2">Prestasi/Kejuaraan/Penghargaan</label>
-                                                    <input type="text" name="kejuaraan" class="form-control" id="form2"
-                                                        value="{{ $prestasi->kejuaraan }}" placeholder="kejuaraan/prestasi/penghargaan">
+                                                    <input type="text" name="kejuaraan" class="form-control"
+                                                        id="form2" value="{{ $prestasi->kejuaraan }}"
+                                                        placeholder="kejuaraan/prestasi/penghargaan" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="form3">Keterangan</label>
-                                                    <input type="text" name="keterangan" class="form-control" id="form3"
-                                                        value="{{ $prestasi->keterangan }}" placeholder="keterangan">
+                                                    <input type="text" name="keterangan" class="form-control"
+                                                        id="form3" value="{{ $prestasi->keterangan }}"
+                                                        placeholder="keterangan" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="form4">Sumber</label>
                                                     <input type="text" name="sumber" class="form-control" id="form4"
-                                                        value="{{ $prestasi->sumber }}" placeholder="sumber">
+                                                        value="{{ $prestasi->sumber }}" placeholder="sumber" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="form5">Deskripsi</label>
+                                                    <textarea name="deskripsi" class="form-control" rows="3" placeholder="Enter ...">{{ $prestasi->deskripsi }}</textarea>
+                                                    {{-- <input type="text" name="deskripsi" class="form-control" id="form5"
+                                                        value="{{ $prestasi->sumber }}" placeholder="sumber" required> --}}
                                                 </div>
 
                                         </div>
@@ -119,7 +129,7 @@
 
 
 
-
+    {{-- Tambah --}}
     <div class="modal fade" id="modal-tambah-prestasi">
         <div class="modal-dialog modal-lg">
             <form enctype="multipart/form-data" class="navbar-form" method="post" action="{{ route('prestasi.store') }}">
@@ -138,8 +148,9 @@
                             <label for="form1">Image</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" name="gambarprestasi" class="custom-file-input" id="form1" required>
-                                    <label class="custom-file-label" for="form1" >photo</label>
+                                    <input type="file" name="gambarprestasi" class="custom-file-input" id="form1"
+                                        required>
+                                    <label class="custom-file-label" for="form1">photo</label>
                                 </div>
 
                             </div>

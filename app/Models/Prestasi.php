@@ -13,6 +13,7 @@ class Prestasi extends Model
         'kejuaraan',
         'keterangan',
         'sumber',
+        'deskripsi',
         'gambarprestasi',
     ];
 }

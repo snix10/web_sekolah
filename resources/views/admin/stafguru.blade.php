@@ -29,6 +29,7 @@
                             <td>{{ $stafguru->mapel }}</td>
 
 
+                            {{-- Modal Ubah --}}
                             <div class="modal fade" id="modal-ubah{{ $stafguru->id }}">
                                 <div class="modal-dialog modal-lg">
 
@@ -51,11 +52,11 @@
 
                                                 <img src="{{ asset('storage/photos/' . $stafguru->photo) }}" alt="">
                                                 <div class="form-group">
-                                                    <label for="photo">Photo</label>
+                                                    <label for="form1">Photo</label>
                                                     <div class="input-group">
                                                         <div class="custom-file">
                                                             <input type="file" name="photo" class="custom-file-input"
-                                                                id="exampleInputFile">
+                                                                id="form1">
                                                             <label class="custom-file-label"
                                                                 for="exampleInputFile">{{ $stafguru->photo }}</label>
                                                         </div>
@@ -64,18 +65,18 @@
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="nama">Nama</label>
-                                                    <input type="text" name="nama" class="form-control" id="nama"
-                                                        value="{{ $stafguru->nama }}" placeholder="masukan nama">
+                                                    <label for="form2">Nama</label>
+                                                    <input type="text" name="nama" class="form-control" id="form2"
+                                                        value="{{ $stafguru->nama }}" placeholder="masukan nama" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="sebagai">Jabatan</label>
-                                                    <input type="text" name="jabatan" class="form-control" id="sebagai"
-                                                        value="{{ $stafguru->jabatan }}" placeholder="jabatan">
+                                                    <label for="form3">Jabatan</label>
+                                                    <input type="text" name="jabatan" class="form-control" id="form3"
+                                                        value="{{ $stafguru->jabatan }}" placeholder="jabatan" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="mapel">Mapel</label>
-                                                    <input type="text" name="mapel" class="form-control" id="mapel"
+                                                    <label for="form4">Mapel</label>
+                                                    <input type="text" name="mapel" class="form-control" id="form4"
                                                         value="{{ $stafguru->mapel }}" placeholder="mapel">
                                                 </div>
 
@@ -119,7 +120,7 @@
 
 
 
-
+    {{-- Tambah --}}
     <div class="modal fade" id="modal-tambah">
         <div class="modal-dialog modal-lg">
             <form enctype="multipart/form-data" class="navbar-form" method="post" action="{{ route('stafguru.store') }}">
@@ -135,11 +136,11 @@
                     <div class="modal-body">
 
                         <div class="form-group">
-                            <label for="photo">Photo</label>
+                            <label for="form1">Photo</label>
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" name="photo" class="custom-file-input" id="exampleInputFile" required>
-                                    <label class="custom-file-label" for="exampleInputFile" >photo</label>
+                                    <input type="file" name="photo" class="custom-file-input" id="form1" required>
+                                    <label class="custom-file-label" for="exampleInputFile">photo</label>
                                 </div>
 
                             </div>
@@ -148,19 +149,19 @@
 
 
                         <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" name="nama" class="form-control" id="nama"
+                            <label for="form2">Nama</label>
+                            <input type="text" name="nama" class="form-control" id="form2"
                                 placeholder="masukan nama" required>
                         </div>
                         <div class="form-group">
-                            <label for="sebagai">Jabatan</label>
-                            <input type="text" name="jabatan" class="form-control" id="sebagai"
+                            <label for="form3">Jabatan</label>
+                            <input type="text" name="jabatan" class="form-control" id="form3"
                                 placeholder="jabatan" required>
                         </div>
                         <div class="form-group">
-                            <label for="mapel">Mapel</label>
-                            <input type="text" name="mapel" class="form-control" id="mapel"
-                                placeholder="mapel" required>
+                            <label for="form4">Mapel</label>
+                            <input type="text" name="mapel" class="form-control" id="form4"
+                                placeholder="mapel">
                         </div>
 
                     </div>

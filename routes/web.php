@@ -8,8 +8,8 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::get('/login', function () {
-    return view('admin.auth.auth');
+Route::get('/', function () {
+    return view('index');
 });
 
 // Route::get('/daftar', [AuthController::class,'lamandaftar'])->middleware('guest');
