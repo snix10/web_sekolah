@@ -60,24 +60,38 @@
                             {{-- <i class="right fas fa-angle-left" ></i> --}}
                         </p>
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="{{ url('PPDB')}}" class="nav-link {{ Request::is('PPDB') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-user-graduate"></i>
                         <p>
                             PPDB
                             {{-- <i class="right fas fa-angle-left" ></i> --}}
                         </p>
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="{{ url('blog')}}" class="nav-link {{ Request::is('blog') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-newspaper"></i>
                         <p>
                             Blog
                             {{-- <i class="right fas fa-angle-left" ></i> --}}
                         </p>
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="{{ url('galeri')}}" class="nav-link {{ Request::is('galeri') ? 'active' : '' }}">
                         <i class="nav-icon far fa-images"></i>
                         <p>
                             Galeri
+                            {{-- <i class="right fas fa-angle-left" ></i> --}}
+                        </p>
+                    </a>
+                    <a href="{{ url('agendaterdekat')}}" class="nav-link {{ Request::is('agendaterdekat') ? 'active' : '' }}">
+                        <i class="far fa-calendar-alt nav-icon"></i>
+                        <p>
+                            Agenda Terdekat
+                            {{-- <i class="right fas fa-angle-left" ></i> --}}
+                        </p>
+                    </a>
+                    <a href="{{ url('ekstrakurikuler')}}" class="nav-link {{ Request::is('ekstrakurikuler') ? 'active' : '' }}">
+                        <i class="fas fa-futbol nav-icon"></i>
+                        <p>
+                            Esktrakurikuler
                             {{-- <i class="right fas fa-angle-left" ></i> --}}
                         </p>
                     </a>
@@ -120,13 +134,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ url('agendaterdekat')}}" class="nav-link {{ Request::is('agendaterdekat') ? 'active' : '' }}">
                                 <i class="far fa-calendar-alt nav-icon"></i>
                                 <p>Agenda Terdekat</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="{{ url('ekstrakurikuler')}}" class="nav-link {{ Request::is('ekstrakurikuler') ? 'active' : '' }}">
                                 <i class="fas fa-futbol nav-icon"></i>
                                 <p>Ekstrakurikuler</p>
                             </a>

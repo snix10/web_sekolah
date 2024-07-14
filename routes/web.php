@@ -4,6 +4,11 @@ use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\StafGuruController;
 use App\Http\Controllers\admin\PrestasiController;
+use App\Http\Controllers\admin\PPDBController;
+use App\Http\Controllers\admin\GaleriController;
+use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\EkstrakurikulerController;
+use App\Http\Controllers\admin\AgendaterdekatController;
 
 
 Route::get('/', function () {
@@ -21,15 +26,13 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('dashboard', DashboardController::class);
     Route::resource('stafguru', StafGuruController::class);
     Route::resource('prestasi', PrestasiController::class);
+    Route::resource('PPDB', PPDBController::class);
+    Route::resource('agendaterdekat', AgendaterdekatController::class);
+    Route::resource('blog', BlogController::class);
+    Route::resource('ekstrakurikuler', EkstrakurikulerController::class);
+    Route::resource('galeri', GaleriController::class);
 
     
-    
-    
-    // Route::resource('PPDB', PinjamBukuController::class);
-    // Route::resource('agendaterdekat', PinjamBukuController::class);
-    // Route::resource('blog', PinjamBukuController::class);
-    // Route::resource('ekstrakurikuler', PinjamBukuController::class);
-    // Route::resource('galeri', PinjamBukuController::class);
 });
 
 

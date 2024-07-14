@@ -67,7 +67,7 @@
                     @yield('blog')
                     @yield('galeri')
                     @yield('agendaterdekat')
-                    @yield('ekstrakulikuler')
+                    @yield('ekstrakurikuler')
 
 
                     <!-- /.row -->

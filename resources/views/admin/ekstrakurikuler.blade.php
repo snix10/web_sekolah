@@ -1,6 +1,7 @@
-@extends('index')
+@extends('admin.index')
 
-@section('ekstrakulikuler')
+@section('ekstrakurikuler')
+
 <h1>laman ekstrakulikuler</h1>
     
 @endsection

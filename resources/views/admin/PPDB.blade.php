@@ -1,6 +1,6 @@
-@extends('index')
+@extends('admin.index')
 
-@section('PPDB')
+@section('ppdb')
 <h1>laman PPDB</h1>
     
 @endsection
