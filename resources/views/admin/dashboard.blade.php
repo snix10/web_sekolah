@@ -6,11 +6,11 @@
 <div class="row">
     <div class="col-12 col-sm-6 col-md-3">
         <div class="info-box">
-            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
+            <a href="" class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></a>
 
-            <div class="info-box-content">
+            <div class="info-box-content nav-link">
                 <span class="info-box-text">Staf - Guru</span>
-                <span class="info-box-number">
+                <span class="info-box-number nav -link">
                     {{ $stafgurus->total() }}
                     <small></small>
                 </span>
