@@ -12,10 +12,11 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                <i class="fas fa-user fa-2x"></i></a>
+                {{-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> --}}
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">{{ auth()->user()->name }}</a>
             </div>
         </div>
 
@@ -123,15 +124,15 @@
                         </li>
                     </ul> --}}
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon far fa-calendar-check"></i>
                         <p>
                             Kegiatan Sekolah
-                            <i class="fas fa-angle-left right"></i>
+                            <i class="fas fa-angle-left right"></i> --}}
                             {{-- <span class="badge badge-info right">6</span> --}}
-                        </p>
-                    </a>
+                        {{-- </p> --}}
+                    {{-- </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ url('agendaterdekat')}}" class="nav-link {{ Request::is('agendaterdekat') ? 'active' : '' }}">
@@ -144,7 +145,7 @@
                                 <i class="fas fa-futbol nav-icon"></i>
                                 <p>Ekstrakurikuler</p>
                             </a>
-                        </li>
+                        </li> --}}
                         {{-- <li class="nav-item">
                             <a href="pages/layout/boxed.html" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
