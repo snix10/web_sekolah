@@ -1,8 +1,6 @@
 @extends('admin.index')
 
 @section('galeri')
-    <h1>laman galeri</h1>
-
 
     <div class="card">
         <div class="card-header">
@@ -92,7 +90,7 @@
 
                                             </form>
 
-                                            <form action="{{ route('galeri.destroy', $galeris) }}" method="POST"
+                                            <form action="{{ route('galeri.destroy', $galeri) }}" method="POST"
                                                 class="d-inline">
                                                 @csrf
                                                 @method('DELETE')
