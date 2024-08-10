@@ -4,12 +4,13 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Blog;
 
 class BlogController extends Controller
 {
     public function index()
     {
-        
-        return view('admin.blog');
+        $blogs = Blog::all();
+        return view('admin.blog',compact('blogs'));
     }
 }

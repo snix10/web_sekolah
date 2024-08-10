@@ -17,7 +17,7 @@
             <thead>
                 <tr>
                     <th>Judul</th>
-                    <th></th>
+                    <th>AS</th>
                     <th>Mapel</th>
                 </tr>
             </thead>
@@ -26,9 +26,9 @@
                 @foreach ($blogs as $blog)
                     <tr data-toggle="modal" data-target="#modal-ubah{{ $blog->id }}">
                         <td>{{ $blog->judul }}</td>
-                        <td>{{ $blog-> }}
+                        <td>{{ $blog->gambar_blog }}
                         </td>
-                        <td>{{ $blog->isi }}</td>
+                        <td>{{ $blog->body }}</td>
 
 
                         {{-- Modal Ubah --}}
@@ -46,7 +46,7 @@
                                         </button>
                                     </div>
 
-                                    <div class="modal-body">
+                                    {{-- <div class="modal-body">
                                         <form enctype="multipart/form-data" class="navbar-form" method="post"
                                             action="{{ route('stafguru.update', $blog) }}">
                                             @csrf
@@ -83,12 +83,12 @@
                                             </div>
 
                                     </div>
-                                    <div class="modal-footer justify-content-between">
+                                    <div class="modal-footer justify-content-between"> --}}
 
 
                                         {{-- <button type="button" class="btn btn-default"
                                                 data-dismiss="modal">Close</button> --}}
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                        {{-- <button type="submit" class="btn btn-primary">Save changes</button>
 
                                         </form>
 
@@ -98,7 +98,7 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger"> <i
                                                     class="nav-icon fas fa-trash"></i></button>
-                                        </form>
+                                        </form> --}}
                                     </div>
 
                                 </div>
@@ -123,7 +123,7 @@
 
 
 {{-- Tambah --}}
-<div class="modal fade" id="modal-tambah">
+{{-- <div class="modal fade" id="modal-tambah">
     <div class="modal-dialog modal-lg">
         <form enctype="multipart/form-data" class="navbar-form" method="post" action="{{ route('stafguru.store') }}">
             @csrf
@@ -174,7 +174,7 @@
         </form>
     </div>
     <!-- /.modal-content -->
-</div>
+</div> --}}
 <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
