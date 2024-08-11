@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Prestasi;
 use App\Models\StafGuru;
+use App\Models\Blog;
 
 class DashboardController extends Controller
 {
@@ -13,8 +14,9 @@ class DashboardController extends Controller
     {
         $stafgurus = StafGuru::paginate();
         $prestasis = Prestasi::paginate();
+        $blogs = Blog::paginate();
 
-        return view('admin.dashboard', compact('stafgurus', 'prestasis'));
+        return view('admin.dashboard', compact('stafgurus', 'prestasis','blogs'));
     }
 
 }

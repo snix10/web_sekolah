@@ -45,7 +45,7 @@
 
             <div class="info-box-content">
                 <span class="info-box-text">Blog</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number">{{ $blogs->total()}}</span>
             </div>
             <!-- /.info-box-content -->
         </div>
